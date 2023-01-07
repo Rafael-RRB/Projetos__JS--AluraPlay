@@ -28,6 +28,7 @@ async function buscarVideos(event) {
 
     // Limpa o campo após pesquisar algo
     input.value = "";
+    videoAltura();   
 }
 
 

@@ -9,6 +9,15 @@
     box-sizing: border-box;
 }
 
+a, button, input {
+    min-width: 50px;
+    width: 5rem;
+    min-height: 50px;
+    height: 5rem;
+}
+html {
+    font-size: 10px;
+}
 body {
     font-family: Roboto, Arial, Helvetica, sans-serif;
     background-color: var(--azul-claro);
@@ -16,7 +25,7 @@ body {
     width: 100%;
     height: 100vh;
     overflow: auto;
-    font-size: 14px;
+    font-size: 1.4rem;
     color: white;
     box-sizing: border-box;
     text-align: center;
@@ -25,29 +34,58 @@ body {
 /* ESTILOS DO HEADER */
 
 .cabecalho {
+    display: flex;
+    justify-content: space-between;
     background-color: white;
     position: fixed;
     top: 0;
-    height: 80px;
+    height: 5rem;
     width: 100%;
-    padding: 0 25px;
     z-index: 2;
+}
+.cabecalho__menu {
+    color: black;
+    background: transparent url(../img/cabecalho/menu.svg) no-repeat center / 30px;
+}
+.cabecalho__espaco {
+    display: inline-block;
+    min-width: 50px;
+    min-height: 50px;
+}
+.cabecalho__submenu {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    padding: 0 0 1rem 1rem;
+    background-color: white;
+}
+.rodape {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: black;
+    background-color: white;
+    width: 100%;
+    height: 5rem;
+    padding: 1rem;
 }
 
 .logo {
-    background-image: url(../img/cabecalho/Logo.png);
-    background-repeat: no-repeat;
-    padding: 15px 65px;
+    background: transparent url(../img/cabecalho/Logo.png) no-repeat center / auto 30px;
+    min-width: 13rem;
     cursor: pointer;
 }
 
-
+.cabecalho__icones {
+    height: 5rem;
+}
 .cabecalho__videos {
-    background-image: url(../img/cabecalho/video_call.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 15px;
+    display: inline-block;
+    background: transparent url(../img/cabecalho/video_call.png) no-repeat center / 30px;
+    padding: 0;
+    margin-left: 2rem;
 }
 
 /* ESTILOS DA SEÇÃO VÍDEOS */
@@ -70,16 +108,16 @@ body {
 .mensagem__titulo {
     color: var(--azul-medio);
     font-weight: bold;
-    font-size: 21px;
+    font-size: 2.1rem;
 }
 
 .pesquisar__input {
-    width: 260px;
-    height: 32px;
-    border: 1px solid rgb(211, 211, 211);
-    font-size: 16px;
-    padding: 3px 8px;
-    border: 1px solid rgb(211, 211, 211);
+    width: 100%;
+    height: 5rem;
+    border: .1rem solid rgb(211, 211, 211);
+    font-size: 1.6rem;
+    padding: .3rem .8rem;
+    border: .1rem solid rgb(211, 211, 211);
     color: var(--azul-escuro);
 }
 
@@ -90,19 +128,48 @@ body {
     border: 1px solid rgb(211, 211, 211);
     background-color: #F9F9F9;
     border-left: none;
-    padding: 15px 15px;
+    height: 5rem;
     cursor: pointer;
 }
 
 .cabecalho__pesquisar {
     display: flex;
     justify-content: center;
+    width: 100%;
+    height: 5rem;
 }
 
-@media(min-width: 834px) {
+/* JS */
+.js__flex {
+    display: flex;
+}
 
-    body {
-        height: 100vh;
+@media screen and (min-width: 768px) {
+    .cabecalho {
+        padding: 1rem 5%;
+        height: 7rem;
     }
 
+    .cabecalho__menu {
+        display: none;
+    }
+
+    .cabecalho__espaco {
+        width: 13rem;
+        order: 3;
+    }
+
+    .cabecalho__submenu {
+        display: flex;
+        position: initial;
+        width: 50%;
+        padding: 0;
+        height: 100%;
+    }
+    
+    .rodape {
+        height: 7rem;
+        padding: 1rem 5%;
+    }
+    
 }

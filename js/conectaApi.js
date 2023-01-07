@@ -1,4 +1,14 @@
 console.log("conectaAPI.js carregado.");
+const hamburgerMenu = document.querySelector('[data-cabecalho="menu"');
+const submenu = document.querySelector('[data-cabecalho="submenu"');
+hamburgerMenu.addEventListener("click", event => {
+    if(submenu.classList.contains("js__flex")) {
+        submenu.classList.remove("js__flex");
+    } else {
+        submenu.classList.add("js__flex");
+    }
+});
+
 
 // A palavra "async" antes de "function" significa que a função retornará uma "promise".
 // Um "promise" é um objeto que representa o sucesso ou falha de uma operação assíncrona.
@@ -40,7 +50,7 @@ async function buscaVideo(busca) {
 export const conectaApi = {
     listaVideos,
     criaVideo,
-    buscaVideo
+    buscaVideo,
 }
 
 /*

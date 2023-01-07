@@ -17,26 +17,61 @@
 
     <header>
         <nav class="cabecalho">
+            <button class="cabecalho__menu" data-cabecalho="menu"></button>
+
             <a class="logo" href="./index.html"></a>
 
-            <div class="cabecalho__pesquisar">
+            <div class="cabecalho__espaco"></div>
 
-                <input type="search" placeholder="Pesquisar" id="pesquisar" class="pesquisar__input" data-pesquisa="campo">
-                <button class="pesquisar__botao" data-pesquisa="botao">
+            <span class="cabecalho__submenu" data-cabecalho="submenu">
+                <div class="cabecalho__pesquisar">
+                    <input type="search" placeholder="Pesquisar" id="pesquisar" class="pesquisar__input" data-pesquisa="campo">
+                    <button class="pesquisar__botao" data-pesquisa="botao">
+                </div>
 
-            </div>
-
-            <div class="cabecalho__icones">
-                <a href="./pages/enviar-video.html" class="cabecalho__videos"></a>
-            </div>
+                <div class="cabecalho__icones">
+                    <a href="./pages/enviar-video.html" class="cabecalho__videos"></a>
+                </div>
+            </span>
         </nav>
 
     </header>
 
     <ul class="videos__container" alt="videos alura" data-lista="lista"></ul>
 
+    <footer class="rodape">
+        &copy; 2022 Rafael através da Alura. Todos os direitos reservados.
+    </footer>
+
+    <script>
+        // Concerta itens modificados pelo flex-grow
+        function videoAltura() {
+            const videoItens = document.querySelectorAll(".videos__item");
+            console.log(videoItens);
+            if(videoItens.length === 0) {
+                setTimeout(videoAltura, 1000);
+            } else {
+                for(let i = 0; i < videoItens.length; i++) {
+                    const width = videoItens[i].offsetWidth;
+                    const height = videoItens[i].offsetHeight;
+                    console.log(width);
+                    if((width / height) > 2) {
+                        videoItens[i].classList.add("videos__item--grande");
+                        videoItens[i].querySelector("iframe").classList.add("videos__item--grande");
+                    } else {
+                        videoItens[i].classList.remove("videos__item--grande");
+                    }
+                }
+            }
+        }
+        
+        screen.orientation.addEventListener("change", () => {
+            setTimeout(videoAltura, 10);
+        });
+    </script>
     <script src="js/mostrarVideos.js" type="module"></script>
     <script src="js/buscarVideos.js" type="module"></script>
+    
 </body>
 
 </html>
