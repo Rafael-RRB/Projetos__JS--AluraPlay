@@ -13,14 +13,14 @@ hamburgerMenu.addEventListener("click", event => {
 // A palavra "async" antes de "function" significa que a função retornará uma "promise".
 // Um "promise" é um objeto que representa o sucesso ou falha de uma operação assíncrona.
 async function listaVideos() {
-    const conexao = await fetch("http://localhost:3000/videos");
+    const conexao = await fetch("https://my-json-server.typicode.com/rafael-rrb/Projetos__JS--AluraPlay");
     const conexaoConvertida = await conexao.json();
 
     return conexaoConvertida;
 }
 
 async function criaVideo(titulo, descricao, url, imagem) {
-    const conexao = await fetch("http://localhost:3000/videos", {
+    const conexao = await fetch("https://my-json-server.typicode.com/rafael-rrb/Projetos__JS--AluraPlay", {
         method: "POST",
         headers: {
             "Content-type": "application/json"
@@ -41,7 +41,7 @@ async function criaVideo(titulo, descricao, url, imagem) {
 }
 
 async function buscaVideo(busca) {
-    const conexao = await fetch(`http://localhost:3000/videos?q=${busca}`);
+    const conexao = await fetch(`https://my-json-server.typicode.com/rafael-rrb/Projetos__JS--AluraPlay/videos?q=${busca}`);
     const conexaoConvertida = await conexao.json();
 
     return conexaoConvertida;
