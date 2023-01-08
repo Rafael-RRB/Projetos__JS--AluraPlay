@@ -13,6 +13,7 @@
     gap: 2rem;
     z-index: 1;
     padding: 5rem 0 2rem 0;
+    min-height: calc(100vh - 10rem);
 }
 
 .videos__item {
@@ -63,7 +64,8 @@
 
 @media screen and (min-width: 768px) {
     .videos__container {
-        padding: calc(7rem + 5%) 5% 5% 5%;
+        padding: 3.5rem;
+        min-height: calc(100vh - 14rem);
     }
 
     .videos__item {
@@ -94,7 +96,7 @@
     }
 
     .videos__item--grande {
-        height: 25vw;
+        height: 40vw;
     }
 }
 
@@ -109,6 +111,6 @@
     }
 
     .videos__item--grande {
-        height: 25vw;
+        height: 35vw;
     }
 }

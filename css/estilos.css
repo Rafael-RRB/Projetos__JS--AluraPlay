@@ -25,6 +25,8 @@ body {
     color: white;
     box-sizing: border-box;
     text-align: center;
+    min-height: calc(100vh - 5rem);
+    margin-top: 5rem;
 }
 
 /* ESTILOS DO HEADER */
@@ -41,7 +43,7 @@ body {
 }
 .cabecalho__menu {
     color: black;
-    background: transparent url(../img/cabecalho/menu.svg) no-repeat center / 30px;
+    background: transparent url(../img/cabecalho/menu.svg) no-repeat center / 3rem;
 }
 .cabecalho__espaco {
     display: inline-block;
@@ -69,7 +71,7 @@ body {
 }
 
 .logo {
-    background: transparent url(../img/cabecalho/Logo.png) no-repeat center / auto 30px;
+    background: transparent url(../img/cabecalho/logo--novo.svg) no-repeat center / auto 3rem;
     min-width: 13rem;
     cursor: pointer;
 }
@@ -79,9 +81,9 @@ body {
 }
 .cabecalho__videos {
     display: inline-block;
-    background: transparent url(../img/cabecalho/video_call.png) no-repeat center / 30px;
+    background: transparent url(../img/cabecalho/video_cal--novo.svg) no-repeat center / 3rem;
     padding: 0;
-    margin-left: 2rem;
+    margin: 0 1rem;
 }
 
 /* ESTILOS DA SEÇÃO VÍDEOS */
@@ -132,10 +134,8 @@ body {
 }
 
 .pesquisar__botao {
-    background-image: url(../img/cabecalho/search.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    border: 1px solid rgb(211, 211, 211);
+    background: transparent url(../img/cabecalho/search--novo.svg) no-repeat center / 2rem;
+    border: .1rem solid rgb(211, 211, 211);
     background-color: #F9F9F9;
     border-left: none;
     height: 5rem;
@@ -170,6 +170,11 @@ body {
 }
 
 @media screen and (min-width: 768px) {
+    body {
+        min-height: calc(100vh - 7rem);
+        margin-top: 7rem;
+    }
+    
     .cabecalho {
         padding: 1rem 5%;
         height: 7rem;
