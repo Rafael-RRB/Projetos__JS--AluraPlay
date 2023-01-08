@@ -5,11 +5,6 @@
     align-items: center;
 }
 
-
-
-
-
-
 /* SEÇÃO VÍDEOS */
 
 .videos__container {
@@ -82,10 +77,6 @@
 }
 
 @media screen and (min-width: 992px) {
-    .videos__container {
-        padding: calc(7rem + 5%) 5% 5% 5%;
-    }
-
     .videos__item {
         width: 30%;
         height: calc(30vw * .72 + 8em);
@@ -97,8 +88,6 @@
 }
 
 @media screen and (min-width: 1200px) {
-    .videos__container {}
-
     .videos__item {
         width: 20%;
         height: calc(25vw * .72 + 8em);
@@ -110,6 +99,10 @@
 }
 
 @media screen and (min-width: 1400px) {
+    html {
+        font-size: .75vw;
+    }
+
     .videos__item {
         width: 17.5%;
         height: calc(27.5vw * .72 + 8em);

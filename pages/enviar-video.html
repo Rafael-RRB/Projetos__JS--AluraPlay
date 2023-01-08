@@ -18,21 +18,30 @@
 
     <!-- Cabecalho -->
     <header>
+        <nav class="cabecalho js__justify--center">
+            <button class="cabecalho__menu" data-cabecalho="menu"></button>
 
-        <nav class="cabecalho">
             <a class="logo" href="../index.html"></a>
 
-            <div class="cabecalho__icones">
-                <a href="./enviar-video.html" class="cabecalho__videos"></a>
-            </div>
-        </nav>
+            <div class="cabecalho__espaco js__disabled"></div>
 
+            <span class="cabecalho__submenu js__disabled" data-cabecalho="submenu">
+                <div class="cabecalho__pesquisar">
+                    <input type="search" placeholder="Pesquisar" id="pesquisar" class="pesquisar__input" data-pesquisa="campo">
+                    <button class="pesquisar__botao" data-pesquisa="botao">
+                </div>
+
+                <div class="cabecalho__icones">
+                    <a href="./pages/enviar-video.html" class="cabecalho__videos"></a>
+                </div>
+            </span>
+        </nav>
     </header>
 
     <main class="container">
 
         <form class="container__formulario" data-formulario="formulario">
-            <h2 class="formulario__titulo">Envie um vídeo!</h3>
+            <h1 class="formulario__titulo">Envie um vídeo!</h1>
                 <div class="formulario__campo">
                     <label class="campo__etiqueta" for="url">Link embed</label>
                     <input name="url" class="campo__escrita" required
@@ -56,6 +65,11 @@
         </form>
 
     </main>
+
+    <footer class="rodape">
+        &copy; 2022 Rafael através da Alura. Todos os direitos reservados.
+    </footer>
+    
     <script src="../js/criarVideo.js" type="module"></script>
 </body>
 

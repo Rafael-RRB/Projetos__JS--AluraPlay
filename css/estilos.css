@@ -21,10 +21,6 @@ html {
 body {
     font-family: Roboto, Arial, Helvetica, sans-serif;
     background-color: var(--azul-claro);
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: auto;
     font-size: 1.4rem;
     color: white;
     box-sizing: border-box;
@@ -98,17 +94,31 @@ body {
     display: grid;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    padding-top: 5rem;
+    min-height: calc(100vh - 5rem);
+}
+
+.mensagem > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    min-width: 280px;
+    width: 100%;
+    min-height: 100%;
 }
 
 .mensagem__imagem {
+    min-width: 200px;
     width: 30%;
 }
 
 .mensagem__titulo {
     color: var(--azul-medio);
     font-weight: bold;
-    font-size: 2.1rem;
+    font-size: 3.6rem;
+    margin-bottom: 1em;
 }
 
 .pesquisar__input {
@@ -141,7 +151,22 @@ body {
 
 /* JS */
 .js__flex {
-    display: flex;
+    display: flex !important;
+}
+
+.js__disabled {
+    display: none !important;
+}
+
+.js__justify--center {
+    justify-content: center !important;
+}
+
+.js__teste--imagem {
+    position: absolute;
+    opacity: 1;
+    width: auto;
+    height: auto;
 }
 
 @media screen and (min-width: 768px) {
@@ -167,9 +192,12 @@ body {
         height: 100%;
     }
     
+    .mensagem {
+        padding-top: 7rem;
+        min-height: calc(100vh - 7rem);
+    }
     .rodape {
         height: 7rem;
         padding: 1rem 5%;
     }
-    
 }
