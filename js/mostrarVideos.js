@@ -27,7 +27,7 @@ async function listaVideo() {
         // Essa é a lista JSON dos videos
         const listaApi = await conectaApi.listaVideos();
         // Para cada item JSON, executar um appendChild
-        listaApi.forEach(ele => {
+        listaApi.videos.forEach(ele => {
             listaVideos.appendChild(constroiCard(ele.url, ele.imagem, ele.titulo, ele.descricao));
         });
     } catch {
