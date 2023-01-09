@@ -15,7 +15,7 @@ try {
     url = "http://localhost:3000/videos";
     await fetch(url);
 } catch {
-    url = "../db.json";
+    url = "db.json";
 }
 console.log(url);
 // A palavra "async" antes de "function" significa que a função retornará uma "promise".
