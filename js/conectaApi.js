@@ -8,19 +8,27 @@ hamburgerMenu.addEventListener("click", event => {
         submenu.classList.add("js__flex");
     }
 });
-
-
+// O arquivo db.json pode ser lido com um fetch.
+// Com o json-server aberto, é possível utilizar o localhost -- caso contrário, utilizar o arquivo db.json
+let url;
+try {
+    url = "http://localhost:3000/videos";
+    await fetch(url);
+} catch {
+    url = "../db.json";
+}
+console.log(url);
 // A palavra "async" antes de "function" significa que a função retornará uma "promise".
 // Um "promise" é um objeto que representa o sucesso ou falha de uma operação assíncrona.
 async function listaVideos() {
-    const conexao = await fetch("https://my-json-server.typicode.com/rafael-rrb/Projetos__JS--AluraPlay");
+    const conexao = await fetch(url);
     const conexaoConvertida = await conexao.json();
 
     return conexaoConvertida;
 }
 
 async function criaVideo(titulo, descricao, url, imagem) {
-    const conexao = await fetch("https://my-json-server.typicode.com/rafael-rrb/Projetos__JS--AluraPlay", {
+    const conexao = await fetch(url, {
         method: "POST",
         headers: {
             "Content-type": "application/json"
@@ -41,7 +49,7 @@ async function criaVideo(titulo, descricao, url, imagem) {
 }
 
 async function buscaVideo(busca) {
-    const conexao = await fetch(`https://my-json-server.typicode.com/rafael-rrb/Projetos__JS--AluraPlay/videos?q=${busca}`);
+    const conexao = await fetch(`${url}?q=${busca}`);
     const conexaoConvertida = await conexao.json();
 
     return conexaoConvertida;
